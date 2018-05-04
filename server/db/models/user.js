@@ -3,21 +3,19 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const User = db.define('user', {
+  userName: {
+    type: Sequelize.STRING,
+    // allowNull: false,
+    unique: true,
+  },
   email: {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false
   },
   profileImgUri: {
-    type: Sequelize.STRING,
-    defaultValue: 
-      'https://i.pinimg.com/originals/c9/87/c7/c987c719aa87985dc9d30f82c6be4d8b.jpg'
-    ,
-  userName: {
-    type: Sequelize.STRING,
-    // allowNull: false,
-    unique: true,
-  }
+    type: Sequelize.TEXT,
+    defaultValue: 'https://i.pinimg.com/originals/c9/87/c7/c987c719aa87985dc9d30f82c6be4d8b.jpg',
   },
   height: {
     type: Sequelize.STRING,
@@ -40,7 +38,7 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     // Making `.salt` act like a function hides it when serializing to JSON.
     // This is a hack to get around Sequelize's lack of a "private" option.
-    get () {
+    get() {
       return () => this.getDataValue('salt')
     }
   },
