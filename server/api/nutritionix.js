@@ -10,29 +10,22 @@ router.get('/:foodName', function(req, res, next) {
     {
         // uri: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
         method: 'POST',
-        uri: 'https://api.nutritionix.com/v1_1/search',
+        uri: 'https://trackapi.nutritionix.com/v2/natural/nutrients',
+        headers: {
+          'Content-Type':'application/json',
+          'x-app-id':'d5418b85',
+          'x-app-key':'ddc6228322dfe36efb7b3b24fb778763'
+        },
         body: {
-        "appId": "d5418b85",
-        "appKey": "ddc6228322dfe36efb7b3b24fb778763",
-        // "Content-Type": "application/json",
         "query": `${foodName}`
         },
         json: true
     }
     requestPromise(options)
-    .then(foods => {
-      res.json(foods)
+    .then(data => {
+      res.json(data.foods)
     })
     .catch(next)
-    // requestPromise.post(url, (error, response, body) => {
-    //     // let json = JSON.parse(response);
-    //     res.json(response);
-    // })
-    // // .then(foods => {
-    // //     let json = JSON.parse(foods);
-    // //     return res.send(json);
-    // // })
-    // .catch(next)
   });
 
 module.exports = router
