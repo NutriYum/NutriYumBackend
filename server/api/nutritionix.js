@@ -23,7 +23,16 @@ router.get('/:foodName', function(req, res, next) {
     }
     requestPromise(options)
     .then(data => {
-      res.json(data.foods)
+      const foodFacts = {
+       name: data.foods[0].food_name,
+       sugar: data.foods[0].nf_sugars,
+       calories: data.foods[0].nf_calories,
+       totFat: data.foods[0].nf_total_fat,
+       sodium: data.foods[0].nf_sodium,
+       protein: data.foods[0].nf_protein,
+       carbs: data.foods[0].nf_total_carbohydrate,
+      }
+      res.json(foodFacts)
     })
     .catch(next)
   });
