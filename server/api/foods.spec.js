@@ -20,7 +20,7 @@ describe('Foods routes', () => {
       })
     })
 
-    it('GET /api/foods', () => {
+    it('should list all foods on /foods GET', () => {
       return request(app)
         .get('/api/foods')
         .expect(200)
@@ -29,5 +29,14 @@ describe('Foods routes', () => {
           expect(res.body[0].name).to.be.equal(Apple)
         })
     })
+    it('should add a food on /foods POST', function(done) {
+     request(app)
+    .post('/foods')
+    .send({'name': 'Apple', 'calories': 94})
+    .end((err, res) => {
+      expect(res.body).to.be.an('object')
+      done();
+    });
+});
   }) // end describe('/api/foods')
 }) // end describe('Foods routes')

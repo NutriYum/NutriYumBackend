@@ -46,18 +46,30 @@ async function seed () {
   const foods = await Promise.all([
     Foods.create({
         "name": "Apple",
-        "calories": 120,
-        "totalFat": 10
+        "sugar": 120,
+        "calories": 10,
+        "totalFat": 120,
+        "sodium": 10,
+        "protein": 120,
+        "carbs": 10,
             }),
     Foods.create({
         "name": "Orange",
-        "calories": 150,
-        "totalFat": 13
+        "sugar": 120,
+        "calories": 10,
+        "totalFat": 120,
+        "sodium": 10,
+        "protein": 120,
+        "carbs": 10,
             }),
     Foods.create({
         "name": "donut",
-        "calories": 343,
-        "totalFat": 45
+        "sugar": 120,
+        "calories": 10,
+        "totalFat": 120,
+        "sodium": 10,
+        "protein": 120,
+        "carbs": 10,
     })
   ])
   // // Wowzers! We can even `await` on the right-hand side of the assignment operator
