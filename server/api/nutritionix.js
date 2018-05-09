@@ -55,19 +55,21 @@ router.get('/:manual', function(req, res, next) {
   }
   requestPromise(options)
   .then(data => {
-    for (let i = 0; i < 5; i++) {
-      let foodFacts = {
-           name: data.foods[i].food_name,
-           sugar: data.foods[i].nf_sugars,
-           calories: data.foods[i].nf_calories,
-           totalFat: data.foods[i].nf_total_fat,
-           sodium: data.foods[i].nf_sodium,
-           protein: data.foods[i].nf_protein,
-           carbs: data.foods[i].nf_total_carbohydrate,
-    }
-  }
-  res.json(foodFacts)
-  console.log("foodFacts>>>  ",foodFacts)
+    //   for (let i = 0; i < 5; i++) {
+    //     let foodFacts = {
+    //          name: data.foods[i].food_name,
+    //          sugar: data.foods[i].nf_sugars,
+    //          calories: data.foods[i].nf_calories,
+    //          totalFat: data.foods[i].nf_total_fat,
+    //          sodium: data.foods[i].nf_sodium,
+    //          protein: data.foods[i].nf_protein,
+    //          carbs: data.foods[i].nf_total_carbohydrate,
+    //   }
+    // }
+    // res.json(foodFacts)
+    console.log("data>>>  ",data)
+  
+    console.log("data.foods>>>  ",data.foods)
   })
   .catch(next)
   })
