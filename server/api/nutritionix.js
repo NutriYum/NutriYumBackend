@@ -54,8 +54,9 @@ router.get('/search/:manual', function(req, res, next) {
       json: true
   }
   requestPromise(options)
-  .then(foodArr = data.foods.map(
-    foodItems => {
+  .then(data => {
+    let foodArr = data.foods.map(
+      foodItems => {
       return (
         {
           name: foodItems.food_name,
@@ -68,10 +69,9 @@ router.get('/search/:manual', function(req, res, next) {
         }
       )
     }
-  ),
-  console.log(data.foods),
+  )
   res.json(foodArr)
-)
+  })
   .catch(next)
 });
 
