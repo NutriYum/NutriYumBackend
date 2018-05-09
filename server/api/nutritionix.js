@@ -36,7 +36,7 @@ router.get('/:foodName', function(req, res, next) {
 });
 
 
-router.get('/:manual', function(req, res, next) {
+router.get('/search/:manual', function(req, res, next) {
 
   const manual = req.params.manual;
   const options =
