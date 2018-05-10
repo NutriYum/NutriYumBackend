@@ -1,0 +1,73 @@
+import {
+  NavigationScreenProp,
+  NavigationEventSubscription
+} from 'react-navigation'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
+import { Platform, ScrollView, StatusBar, View, Button, Text } from 'react-native'
+import { SafeAreaView, createBottomTabNavigator, createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
+import LoginScreen from './Login'
+import SignUpScreen from './Signup'
+import { Provider } from 'react-redux'
+import HomeButtons from './HomeButtons'
+import Home from './Home'
+import store from '../store'
+
+const HomeStack = createStackNavigator(
+  {
+    HomeButtons: {
+      screen: HomeButtons,
+      path: 'HomeButtons'
+    },
+    Login: {
+      screen: LoginScreen,
+      path: 'Login'
+    },
+    SignUp: SignUpScreen,
+    path: 'signup'
+  }
+)
+
+class Splash extends Component {
+  constructor(props){
+    super(props)
+    this.onLoginPress = this.onLoginPress.bind(this)
+    this.onSignUpPress = this.onSignUpPress.bind(this)
+  }
+
+  onLoginPress(){
+      this.props.navigation.navigate('Login')
+    }
+
+  onSignUpPress(){
+      this.props.navigation.navigate('SignUp')
+  }
+
+  //   onTestPress(){
+  //     this.props.navigation.navigate('Test')
+  //   }
+
+  render() {
+    console.log(this);
+    if(!this.props.isLoggedIn){
+      return (
+        <Provider store={store}>
+          <HomeStack navigation={this.props.navigation} />
+        </Provider>
+      )
+    }
+    return (
+      <Home />
+    )
+
+  }
+
+}
+
+const mapState = state => {
+  return {isLoggedIn: false}
+}
+
+const mapDispatch = null
+
+export default connect(mapState, mapDispatch)(Splash)

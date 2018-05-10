@@ -10,10 +10,16 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User, Foods, Image} = require('../server/db/models')
+const {
+  User,
+  Foods,
+  Image
+} = require('../server/db/models')
 
-async function seed () {
-  await db.sync({force: true})
+async function seed() {
+  await db.sync({
+    force: true
+  })
   console.log('db synced!')
   // Whoa! Because we `await` the promise that db.sync returns, the next line will not be
   // executed until that promise resolves!
@@ -21,21 +27,21 @@ async function seed () {
   const users = await Promise.all([
     User.create({
       "userName": "Userone",
-      "email": "dogilvy0@homestead.com",
+      "email": "a@a.com",
       "profileImgUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHXSURBVBgZpcE/S5VhGMfx7+8+T2VI0SDVKvYSrKE/0FsIwgZpCFqiISSiIcoigkIosWyrOR16AU2NETSGZUQoiNYgBJ1znufcz3VdeUvOIX4+igj2QhemFq6fPT/+ZLMXwxGAO+GOuREeeDhhhkcQZpg7h/fn7tLS2u23Tyfmq/Ez43P7hobTsSF2Y7jbszlgvurlSL3NP+xWP0diSxUWPJo8wW5dfbxCUUU4xaA1AggPzMEJ3ANzx9rA2sDCGVgwevwQ5kZREUGhJBRBJBEK5CIlISUkQ52g44mqDQpvjaIyN4oEhASCToAL3INOQFKHSmAKLDmFm1NU4cE2CSJIQEggkCAscMHsp4d4G9w4eY/C3SiSu7FDEkgUCUgSqhIzH+7SH3TpNr+ZfjdF4e4Uqc2ZbRKSKCSBhHnL/fc3yblhbGSM0aNj1LnLlVeT5NxQpDCn6AACJCFAwPOPM/zcXKeuG+p2QN02HNh/kNWNFX6lBYrk7uwQkIAk0ZG4dfoOry++YXn1G02uaXLN8vdlZi+/ZCRfoqjWfqwsXnuWJ9wMN8fMcHcsZ9wdj6B/pKbfNmTLbKxvMD37hS2LbFFE8D/nHpyKpsnkOjMYZD6/+Cr+UUSwF38B/pkb32XiUiUAAAAASUVORK5CYII=",
       "height": 5,
       "weight": 178,
       "DOB": "06/01/1988",
-      "password": "7kIpEprYLYie"
+      "password": "123"
     }),
     User.create({
       "userName": "Usertwo",
-      "email": "btaylor1@goo.gl",
+      "email": "b@b.com",
       "profileImgUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJPSURBVDjLhZPNi1JRGMZv6PwBLQaiqBiIoEV7QQaiaZazrNm0qlkMRJugptpEBNJMtAmapK9lhZ8oKnq5FxQVv7qOX1dRzBxHU8eohc219OrTOVfGSZyxC4cL73nf3/O857yHEUURmUwGqVQKyWQSiUQC8XgcgiAgFovNAmCmLSadTqPf70+sarWqQMLh8FQIQ5VpQaVSUZTL5fIIQmPEBQKBwJEQhlqmyVSNBqLRqNBut9Hr9ZQ4BYZCIXi93kMhDFXdTyTFf4jlSqfTQaPdA78zdFIqleD3+8Hz/ASEocr7lmVZBi3e3etjY2uAJ58BrjLcKxaL1AU8Hs8YhCE9Sq1WS0nqdruoE+X1+ACbGeC1CDzbOoAUCgXqAk6ncwRhIpHIPOlRajabSlK61VOU9QTwPge8yY5D8vk8dQGbzaZAFEowGNSSHqVGo6EkZb/38FToQy8eQNbjALs9hORyOeoCFotldtSLz+fTkh6ler0+AXlLAB/1L8FevwBuYQb8tVNwP74Bk8l0duxESX9ajuOkWq02gugI5MOrTSTuzqPjfI5B1o29T3cQu3VRZhfUtyfulWVZrdvtlugkUohIII7lc5BIMV4sAWvHAd0cWhuX4LmiKh06XS6XS+twOCQ6iRRCbQ8EC/79fj46Ae6yenDkjNvtdg05aYkOGHf1JH69uwmQot/3GPwga3tVBc+iqjr1pVmtVo3ZbJZ43SoiK+flb2tz2H0wgy8rx8AvqWX3ouoh87/najQaNQaD4Uxg+fR9oviV2ib/HVpM9/8Cz3kffqwCPcsAAAAASUVORK5CYII=",
       "height": 6,
-      "weight": 266,
+      "weight": 216,
       "DOB": "11/02/1986",
-      "password": "VEPockBmj4e"
+      "password": "123"
     })
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
@@ -45,32 +51,51 @@ async function seed () {
 
   const foods = await Promise.all([
     Foods.create({
-        "name": "Apple",
-        "sugar": 120,
-        "calories": 10,
-        "totalFat": 120,
-        "sodium": 10,
-        "protein": 120,
-        "carbs": 10,
-            }),
+      "name": "Apple",
+      "sugar": 120,
+      "calories": 10,
+      "totalFat": 120,
+      "sodium": 10,
+      "protein": 120,
+      "carbs": 10,
+    }),
     Foods.create({
-        "name": "Orange",
-        "sugar": 120,
-        "calories": 10,
-        "totalFat": 120,
-        "sodium": 10,
-        "protein": 120,
-        "carbs": 10,
-            }),
+      "name": "Orange",
+      "sugar": 120,
+      "calories": 10,
+      "totalFat": 120,
+      "sodium": 10,
+      "protein": 120,
+      "carbs": 10,
+    }),
     Foods.create({
-        "name": "donut",
-        "sugar": 120,
-        "calories": 10,
-        "totalFat": 120,
-        "sodium": 10,
-        "protein": 120,
-        "carbs": 10,
-    })
+      "name": "donut",
+      "sugar": 120,
+      "calories": 350,
+      "totalFat": 120,
+      "sodium": 10,
+      "protein": 120,
+      "carbs": 10,
+    }),
+    Foods.create({
+      "name": "banana",
+      "sugar": 33,
+      "calories": 65,
+      "totalFat": 23,
+      "sodium": 24,
+      "protein": 9,
+      "carbs": 15
+    }),
+    Foods.create({
+      "name": "mango",
+      "sugar": 47,
+      "calories": 46,
+      "totalFat": 14,
+      "sodium": 1,
+      "protein": 51,
+      "carbs": 34
+    }),
+
   ])
   // // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // // and store the result that the promise resolves to in a variable! This is nice!
