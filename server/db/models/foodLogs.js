@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 
-const FoodLog = db.define('foodLog', {
+const FoodLogs = db.define('foodLogs', {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -25,10 +25,17 @@ const FoodLog = db.define('foodLog', {
     carbs: {
         type: Sequelize.INTEGER,
     },
+    userId: {
+        type: Sequelize.INTEGER,
+    }, 
+    servingUnit: {
+        type: Sequelize.STRING
+    }, 
+    quantity: {
+        type: Sequelize.INTEGER
+    }, 
+    
 })
 
-FoodLog.prototype.daily = function() {
-    
-}
 
-module.exports = FoodLog
+module.exports = FoodLogs
