@@ -12,7 +12,7 @@
 const db = require('../server/db')
 const {
   User,
-  Foods,
+  FoodLog,
   Image
 } = require('../server/db/models')
 
@@ -50,7 +50,7 @@ async function seed() {
   console.log(`seeded successfully`)
 
   const foods = await Promise.all([
-    Foods.create({
+    FoodLog.create({
       "name": "Apple",
       "sugar": 120,
       "calories": 10,
@@ -59,7 +59,7 @@ async function seed() {
       "protein": 120,
       "carbs": 10,
     }),
-    Foods.create({
+    FoodLog.create({
       "name": "Orange",
       "sugar": 120,
       "calories": 10,
@@ -68,7 +68,7 @@ async function seed() {
       "protein": 120,
       "carbs": 10,
     }),
-    Foods.create({
+    FoodLog.create({
       "name": "donut",
       "sugar": 120,
       "calories": 350,
@@ -77,7 +77,7 @@ async function seed() {
       "protein": 120,
       "carbs": 10,
     }),
-    Foods.create({
+    FoodLog.create({
       "name": "banana",
       "sugar": 33,
       "calories": 65,
@@ -86,7 +86,7 @@ async function seed() {
       "protein": 9,
       "carbs": 15
     }),
-    Foods.create({
+    FoodLog.create({
       "name": "mango",
       "sugar": 47,
       "calories": 46,

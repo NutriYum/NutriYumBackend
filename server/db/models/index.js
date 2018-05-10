@@ -1,5 +1,5 @@
 const User = require('./user')
-const Foods = require('./foods')
+const FoodLog = require('./foodLog')
 const Image = require('./image')
 
 /**
@@ -8,6 +8,8 @@ const Image = require('./image')
  *
  *    BlogPost.belongsTo(User)
  */
+
+FoodLog.belongsTo(User)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -18,6 +20,6 @@ const Image = require('./image')
 
 module.exports = {
   User,
-  Foods,
+  FoodLog,
   Image
 }
