@@ -12,7 +12,7 @@
 const db = require('../server/db')
 const {
   User,
-  FoodLog,
+  FoodLogs,
   Image
 } = require('../server/db/models')
 
@@ -50,7 +50,7 @@ async function seed() {
   console.log(`seeded successfully`)
 
   const foods = await Promise.all([
-    FoodLog.create({
+    FoodLogs.create({
       "name": "Apple",
       "sugar": 120,
       "calories": 10,
@@ -58,8 +58,11 @@ async function seed() {
       "sodium": 10,
       "protein": 120,
       "carbs": 10,
+      "userId": 1,
+      "servingUnit": "cup",
+      "quantity": 1
     }),
-    FoodLog.create({
+    FoodLogs.create({
       "name": "Orange",
       "sugar": 120,
       "calories": 10,
@@ -67,8 +70,11 @@ async function seed() {
       "sodium": 10,
       "protein": 120,
       "carbs": 10,
+      "userId": 1,
+      "servingUnit": "cup",
+      "quantity": 2
     }),
-    FoodLog.create({
+    FoodLogs.create({
       "name": "donut",
       "sugar": 120,
       "calories": 350,
@@ -76,24 +82,33 @@ async function seed() {
       "sodium": 10,
       "protein": 120,
       "carbs": 10,
+      "userId": 2,
+      "servingUnit": "cup",
+      "quantity": 1
     }),
-    FoodLog.create({
+    FoodLogs.create({
       "name": "banana",
       "sugar": 33,
       "calories": 65,
       "totalFat": 23,
       "sodium": 24,
       "protein": 9,
-      "carbs": 15
+      "carbs": 15,
+      "userId": 2,
+      "servingUnit": "cup",
+      "quantity": 3
     }),
-    FoodLog.create({
+    FoodLogs.create({
       "name": "mango",
       "sugar": 47,
       "calories": 46,
       "totalFat": 14,
       "sodium": 1,
       "protein": 51,
-      "carbs": 34
+      "carbs": 34,
+      "userId": 2,
+      "servingUnit": "cup",
+      "quantity": 1
     }),
 
   ])

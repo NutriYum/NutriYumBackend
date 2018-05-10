@@ -29,6 +29,9 @@ router.get('/:foodName', function(req, res, next) {
      sodium: data.foods[0].nf_sodium,
      protein: data.foods[0].nf_protein,
      carbs: data.foods[0].nf_total_carbohydrate,
+     servingUnit: data.foods[0].serving_unit,
+     quantity: data.foods[0].serving_qty
+
     }
     res.json(foodFacts)
   })
@@ -66,6 +69,8 @@ router.get('/search/:manual', function(req, res, next) {
           sodium: foodItems.nf_sodium,
           protein: foodItems.nf_protein,
           carbs: foodItems.nf_total_carbohydrate,
+          servingUnit: foodItems.serving_unit,
+          quantity: foodItems.serving_qty
         }
       )
     }

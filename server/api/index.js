@@ -3,7 +3,7 @@ const router = require('express').Router()
 
 router.use('/users', require('./users'))
 router.use('/foods', require('./foods'))
-router.use('/foodLog', require('./foodLog'))
+router.use('/foodLogs', require('./foodLogs'))
 router.use('/images', require('./images'))
 router.use('/nutri', require('./nutritionix'))
 
