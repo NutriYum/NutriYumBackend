@@ -1,5 +1,5 @@
 const User = require('./user')
-const FoodLog = require('./foodLog')
+const FoodLogs = require('./foodLogs')
 const Image = require('./image')
 
 /**
@@ -9,7 +9,8 @@ const Image = require('./image')
  *    BlogPost.belongsTo(User)
  */
 
-FoodLog.belongsTo(User)
+FoodLogs.belongsTo(User)
+User.hasMany(FoodLogs)  //cant delete user without deleting associated food logs
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -20,6 +21,6 @@ FoodLog.belongsTo(User)
 
 module.exports = {
   User,
-  FoodLog,
+  FoodLogs,
   Image
 }

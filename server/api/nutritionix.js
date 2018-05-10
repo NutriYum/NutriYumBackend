@@ -26,7 +26,9 @@ router.get('/:foodName', function(req, res, next) {
         totalFat: data.foods[0].nf_total_fat,
         sodium: data.foods[0].nf_sodium,
         protein: data.foods[0].nf_protein,
-        carbs: data.foods[0].nf_total_carbohydrate
+        carbs: data.foods[0].nf_total_carbohydrate,
+        servingUnit: data.foods[0].serving_unit,
+        quantity: data.foods[0].serving_qty
       }
       res.json(foodFacts)
     })
@@ -40,6 +42,7 @@ router.get('/:foodName', function(req, res, next) {
       }
     })
 })
+
 
 router.get('/search/:manual', function(req, res, next) {
   const manual = req.params.manual
@@ -66,7 +69,9 @@ router.get('/search/:manual', function(req, res, next) {
           totalFat: foodItems.nf_total_fat,
           sodium: foodItems.nf_sodium,
           protein: foodItems.nf_protein,
-          carbs: foodItems.nf_total_carbohydrate
+          carbs: foodItems.nf_total_carbohydrate,
+          servingUnit: foodItems.serving_unit,
+          quantity: foodItems.serving_qty
         }
       })
       res.json(foodArr)
