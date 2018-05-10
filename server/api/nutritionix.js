@@ -9,8 +9,8 @@ router.get('/:foodName', function(req, res, next) {
     uri: 'https://trackapi.nutritionix.com/v2/natural/nutrients',
     headers: {
       'Content-Type': 'application/json',
-      'x-app-id': '84bf4d6d', //'d5418b85', //this is a backup if usage limit is exceded
-      'x-app-key': '95e4012de24b300a03fe49e96e9b5bbe' //'8539c58f9831675becfed9809c81137b'
+      'x-app-id': 'd5418b85', //'84bf4d6d', //this is a backup if usage limit is exceded
+      'x-app-key': '8539c58f9831675becfed9809c81137b'//,'95e4012de24b300a03fe49e96e9b5bbe' 
     },
     body: {
       query: `${foodName}`
