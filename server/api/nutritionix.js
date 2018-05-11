@@ -33,16 +33,10 @@ router.get('/:foodName', function(req, res, next) {
       res.json(foodFacts)
     })
     .catch(err => {
-      if (err.statusCode === 404) {
-        console.log(err)
-        res.json('That item was not found! Try again')
-      } else {
-        console.log(err)
-        res.json('Something broke! Try again')
-      }
+      console.log(err.body)
+      res.send('Item was not found! Try again')
     })
 })
-
 
 router.get('/search/:manual', function(req, res, next) {
   const manual = req.params.manual
@@ -77,13 +71,8 @@ router.get('/search/:manual', function(req, res, next) {
       res.json(foodArr)
     })
     .catch(err => {
-      if (err.statusCode === 404) {
-        console.log(err)
-        res.json('That item was not found! Try again')
-      } else {
-        console.log(err)
-        res.json('Something broke! Try again')
-      }
+      console.log(err.body)
+      res.send('Item was not found! Try again')
     })
 })
 
