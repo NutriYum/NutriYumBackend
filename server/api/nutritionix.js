@@ -10,7 +10,7 @@ router.get('/:foodName', function(req, res, next) {
     headers: {
       'Content-Type': 'application/json',
       'x-app-id': 'd5418b85', //'84bf4d6d', //this is a backup if usage limit is exceded
-      'x-app-key': '8539c58f9831675becfed9809c81137b'//,'95e4012de24b300a03fe49e96e9b5bbe' 
+      'x-app-key': '8539c58f9831675becfed9809c81137b' //,'95e4012de24b300a03fe49e96e9b5bbe'
     },
     body: {
       query: `${foodName}`
@@ -33,16 +33,10 @@ router.get('/:foodName', function(req, res, next) {
       res.json(foodFacts)
     })
     .catch(err => {
-      if (err.statusCode === 404) {
-        console.log(err)
-        res.json('That item was not found! Try again')
-      } else {
-        console.log(err)
-        res.json('Something broke! Try again')
-      }
+      console.log(err.body)
+      res.send('Item was not found! Try again')
     })
 })
-
 
 router.get('/search/:manual', function(req, res, next) {
   const manual = req.params.manual
@@ -52,7 +46,7 @@ router.get('/search/:manual', function(req, res, next) {
     headers: {
       'Content-Type': 'application/json',
       'x-app-id': 'd5418b85', //'84bf4d6d', //this is a backup if usage limit is exceded
-      'x-app-key': '8539c58f9831675becfed9809c81137b'//,'95e4012de24b300a03fe49e96e9b5bbe' 
+      'x-app-key': '8539c58f9831675becfed9809c81137b' //,'95e4012de24b300a03fe49e96e9b5bbe'
     },
     body: {
       query: `${manual}`
@@ -77,13 +71,8 @@ router.get('/search/:manual', function(req, res, next) {
       res.json(foodArr)
     })
     .catch(err => {
-      if (err.statusCode === 404) {
-        console.log(err)
-        res.json('That item was not found! Try again')
-      } else {
-        console.log(err)
-        res.json('Something broke! Try again')
-      }
+      console.log(err.body)
+      res.send('Item was not found! Try again')
     })
 })
 
