@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
   // servingUnit: 'medium bagel',
   // quantity: 1
   try {
-    const newFood = await req.body.forEach(element => {
+    const newFoodArray = await req.body.map(element => {
       return FoodLogs.create({
         name: element.name,
         sugar: element.sugar,
@@ -59,7 +59,22 @@ router.post('/', async (req, res, next) => {
         userId: req.user.id
       })
     })
-
+    const newFood = await Promise.all(newFoodArray)
+    // console.log(req.body[0])
+    // FoodLogs.create({
+    //     name: req.body[0].name,
+    //     sugar: req.body[0].sugar,
+    //     calories: req.body[0].calories,
+    //     totalFat: req.body[0].totalFat,
+    //     sodium: req.body[0].sodium,
+    //     protein: req.body[0].protein,
+    //     carbs: req.body[0].carbs,
+    //     servingUnit: req.body[0].servingUnit,
+    //     quantity: req.body[0].quantity,
+    //     userId: req.user.id
+    // })
+    // .then(result => res.json(result))
+    console.log(newFood)
     res.json(newFood)
   } catch (err) {
     next(err)
