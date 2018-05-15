@@ -20,6 +20,26 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+///// ALL USERS DATA //////
+
+router.get('/day', (req, res, next) => {
+FoodLogs.oneDayAll()
+.then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+.catch(next);
+})
+
+router.get('/week', (req, res, next) => {
+FoodLogs.oneWeekAll()
+.then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+.catch(next);
+})
+
+router.get('/month', (req, res, next) => {
+FoodLogs.oneMonthAll()
+.then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+.catch(next);
+})
+
 router.get('/:id', async (req, res, next) => {
   try {
     const id = req.params.id
@@ -57,6 +77,10 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 })
+
+
+
+
 router.get('/:id/day', (req, res, next) => {
   let userId = req.params.id
   FoodLogs.oneDay(userId)
@@ -77,5 +101,15 @@ router.get('/:id/month', (req, res, next) => {
   .then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
   .catch(next);
 })
+router.get('/:id/day', (req, res, next) => {
+  let userId = req.params.id
+  FoodLogs.oneDay(userId)
+  .then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+  .catch(next);
+})
+
+
+
+
 
 module.exports = router

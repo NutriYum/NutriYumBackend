@@ -31,27 +31,27 @@ async function seed() {
 
   const users = await Promise.all([
     User.create({
-      "userName": "Userone",
+      "userName": "Bugs",
       "email": "a@a.com",
-      "profileImgUri": "http://dummyimage.com/190x120.png/ff4444/ffffff",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/1200px-Bugs_Bunny.svg.png",
       "height": 5,
       "weight": 178,
       "DOB": "06/01/1988",
       "password": "123"
     }),
     User.create({
-      "userName": "Usertwo",
+      "userName": "Mickey",
       "email": "b@b.com",
-      "profileImgUri": "http://dummyimage.com/190x120.png/ff4444/ffffff",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png",
       "height": 6,
       "weight": 216,
       "DOB": "11/02/1986",
       "password": "123"
     }),
     User.create({
-      "userName": "cmattis0",
-      "email": "rmacsharry0@vk.com",
-      "profileImgUri": "http://dummyimage.com/187x126.bmp/cc0000/ffffff",
+      "userName": "Tweety",
+      "email": "tweety@lt.com",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Tweety.svg/1200px-Tweety.svg.png",
       "height": 5.5,
       "weight": 220,
       "DOB": "2/23/1993",
@@ -60,7 +60,7 @@ async function seed() {
     User.create({
       "userName": "ayexley1",
       "email": "rbazire1@blog.com",
-      "profileImgUri": "http://dummyimage.com/100x210.png/ff4444/ffffff",
+      "profileImgUri": "https://tshaonline.org/sites/default/files/images/handbook/PP/popeye-sailor-man-cartoon.jpg",
       "height": 6.1,
       "weight": 180,
       "DOB": "7/26/1998",
@@ -69,7 +69,7 @@ async function seed() {
     User.create({
       "userName": "ldobby2",
       "email": "vburgise2@archive.org",
-      "profileImgUri": "http://dummyimage.com/243x190.bmp/dddddd/000000",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Goofy.svg/1200px-Goofy.svg.png",
       "height": 5.9,
       "weight": 178,
       "DOB": "10/7/1997",
@@ -78,7 +78,7 @@ async function seed() {
     User.create({
       "userName": "dshirt3",
       "email": "aeastbury3@ox.ac.uk",
-      "profileImgUri": "http://dummyimage.com/241x211.png/dddddd/000000",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Donald_Duck.svg/1200px-Donald_Duck.svg.png",
       "height": 6.1,
       "weight": 181,
       "DOB": "5/27/1987",
@@ -87,7 +87,7 @@ async function seed() {
     User.create({
       "userName": "hwarman4",
       "email": "ekerby4@marriott.com",
-      "profileImgUri": "http://dummyimage.com/176x230.bmp/5fa2dd/ffffff",
+      "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png",
       "height": 6.2,
       "weight": 213,
       "DOB": "2/2/1998",
