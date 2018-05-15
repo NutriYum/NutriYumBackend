@@ -27,14 +27,17 @@ const FoodLogs = db.define('foodLogs', {
     },
     userId: {
         type: Sequelize.INTEGER,
-    }, 
+    },
     servingUnit: {
         type: Sequelize.STRING
-    }, 
+    },
     quantity: {
         type: Sequelize.INTEGER
-    }, 
-    
+    },
+    date: {
+      type: Sequelize.STRING
+    }
+
 })
 
 
