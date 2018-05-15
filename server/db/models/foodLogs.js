@@ -54,7 +54,7 @@ FoodLogs.oneDay = function (userId){
             $and: [
                 { userId: userId },
                 Sequelize.where(
-                   Sequelize.fn('DATE', Sequelize.col('createdAt')),
+                   Sequelize.fn('DATE', Sequelize.col('date')),
                    Sequelize.literal('CURRENT_DATE')
                 )
             ]
@@ -67,7 +67,7 @@ FoodLogs.oneWeek = function (userId){
     return this.findAll({
         where: {
             userId: userId,
-            createdAt: {[Op.gte]: endDate}
+            date: {[Op.gte]: endDate}
          }
     })
 }
@@ -77,7 +77,7 @@ FoodLogs.oneMonth = function (userId){
     return this.findAll({
         where: {
             userId: userId,
-            createdAt: {[Op.gte]: endDate}
+            date: {[Op.gte]: endDate}
          }
     })
 
