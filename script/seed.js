@@ -18,7 +18,7 @@ const {
   Image
 } = require('../server/db/models')
 
-const FoodLogSeed = require('./FoodLogs')
+const FoodLogSeed = require('./foodLogs')
 // console.log(FoodLogSeed);
 
 async function seed() {
