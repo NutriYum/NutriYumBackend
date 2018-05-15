@@ -84,4 +84,38 @@ FoodLogs.oneMonth = function (userId){
 
 }
 
+///// GET ALL USERS DATA /////
+
+FoodLogs.oneDayAll = function (){
+    return this.findAll({
+        where: {
+            $and: [
+                Sequelize.where(
+                   Sequelize.fn('DATE', Sequelize.col('date')),
+                   Sequelize.literal('CURRENT_DATE')
+                )
+            ]
+         }
+    })
+}
+
+FoodLogs.oneWeekAll = function (){
+    let endDate = lessDays(Date.now(), 7)
+    return this.findAll({
+        where: {
+            date: {[Op.gte]: endDate}
+         }
+    })
+}
+
+FoodLogs.oneMonthAll = function (){
+    let endDate = lessDays(Date.now(), 30)
+    return this.findAll({
+        where: {
+            date: {[Op.gte]: endDate}
+         }
+    })
+}
+
+
 module.exports = FoodLogs
