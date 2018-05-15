@@ -34,7 +34,9 @@ const FoodLogs = db.define('foodLogs', {
     quantity: {
         type: Sequelize.INTEGER
     },
-
+    date: {
+      type: Sequelize.STRING
+    }
 })
 
 //Helper function

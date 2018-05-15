@@ -9,12 +9,17 @@
  *
  * Now that you've got the main idea, check it out in practice below!
  */
+
+
 const db = require('../server/db')
 const {
   User,
   FoodLogs,
   Image
 } = require('../server/db/models')
+
+const FoodLogSeed = require('./foodLogs')
+// console.log(FoodLogSeed);
 
 async function seed() {
   await db.sync({
@@ -28,7 +33,7 @@ async function seed() {
     User.create({
       "userName": "Userone",
       "email": "a@a.com",
-      "profileImgUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHXSURBVBgZpcE/S5VhGMfx7+8+T2VI0SDVKvYSrKE/0FsIwgZpCFqiISSiIcoigkIosWyrOR16AU2NETSGZUQoiNYgBJ1znufcz3VdeUvOIX4+igj2QhemFq6fPT/+ZLMXwxGAO+GOuREeeDhhhkcQZpg7h/fn7tLS2u23Tyfmq/Ez43P7hobTsSF2Y7jbszlgvurlSL3NP+xWP0diSxUWPJo8wW5dfbxCUUU4xaA1AggPzMEJ3ANzx9rA2sDCGVgwevwQ5kZREUGhJBRBJBEK5CIlISUkQ52g44mqDQpvjaIyN4oEhASCToAL3INOQFKHSmAKLDmFm1NU4cE2CSJIQEggkCAscMHsp4d4G9w4eY/C3SiSu7FDEkgUCUgSqhIzH+7SH3TpNr+ZfjdF4e4Uqc2ZbRKSKCSBhHnL/fc3yblhbGSM0aNj1LnLlVeT5NxQpDCn6AACJCFAwPOPM/zcXKeuG+p2QN02HNh/kNWNFX6lBYrk7uwQkIAk0ZG4dfoOry++YXn1G02uaXLN8vdlZi+/ZCRfoqjWfqwsXnuWJ9wMN8fMcHcsZ9wdj6B/pKbfNmTLbKxvMD37hS2LbFFE8D/nHpyKpsnkOjMYZD6/+Cr+UUSwF38B/pkb32XiUiUAAAAASUVORK5CYII=",
+      "profileImgUri": "http://dummyimage.com/190x120.png/ff4444/ffffff",
       "height": 5,
       "weight": 178,
       "DOB": "06/01/1988",
@@ -37,84 +42,101 @@ async function seed() {
     User.create({
       "userName": "Usertwo",
       "email": "b@b.com",
-      "profileImgUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJPSURBVDjLhZPNi1JRGMZv6PwBLQaiqBiIoEV7QQaiaZazrNm0qlkMRJugptpEBNJMtAmapK9lhZ8oKnq5FxQVv7qOX1dRzBxHU8eohc219OrTOVfGSZyxC4cL73nf3/O857yHEUURmUwGqVQKyWQSiUQC8XgcgiAgFovNAmCmLSadTqPf70+sarWqQMLh8FQIQ5VpQaVSUZTL5fIIQmPEBQKBwJEQhlqmyVSNBqLRqNBut9Hr9ZQ4BYZCIXi93kMhDFXdTyTFf4jlSqfTQaPdA78zdFIqleD3+8Hz/ASEocr7lmVZBi3e3etjY2uAJ58BrjLcKxaL1AU8Hs8YhCE9Sq1WS0nqdruoE+X1+ACbGeC1CDzbOoAUCgXqAk6ncwRhIpHIPOlRajabSlK61VOU9QTwPge8yY5D8vk8dQGbzaZAFEowGNSSHqVGo6EkZb/38FToQy8eQNbjALs9hORyOeoCFotldtSLz+fTkh6ler0+AXlLAB/1L8FevwBuYQb8tVNwP74Bk8l0duxESX9ajuOkWq02gugI5MOrTSTuzqPjfI5B1o29T3cQu3VRZhfUtyfulWVZrdvtlugkUohIII7lc5BIMV4sAWvHAd0cWhuX4LmiKh06XS6XS+twOCQ6iRRCbQ8EC/79fj46Ae6yenDkjNvtdg05aYkOGHf1JH69uwmQot/3GPwga3tVBc+iqjr1pVmtVo3ZbJZ43SoiK+flb2tz2H0wgy8rx8AvqWX3ouoh87/najQaNQaD4Uxg+fR9oviV2ib/HVpM9/8Cz3kffqwCPcsAAAAASUVORK5CYII=",
+      "profileImgUri": "http://dummyimage.com/190x120.png/ff4444/ffffff",
       "height": 6,
       "weight": 216,
       "DOB": "11/02/1986",
       "password": "123"
-    })
+    }),
+    User.create({
+      "userName": "cmattis0",
+      "email": "rmacsharry0@vk.com",
+      "profileImgUri": "http://dummyimage.com/187x126.bmp/cc0000/ffffff",
+      "height": 5.5,
+      "weight": 220,
+      "DOB": "2/23/1993",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "ayexley1",
+      "email": "rbazire1@blog.com",
+      "profileImgUri": "http://dummyimage.com/100x210.png/ff4444/ffffff",
+      "height": 6.1,
+      "weight": 180,
+      "DOB": "7/26/1998",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "ldobby2",
+      "email": "vburgise2@archive.org",
+      "profileImgUri": "http://dummyimage.com/243x190.bmp/dddddd/000000",
+      "height": 5.9,
+      "weight": 178,
+      "DOB": "10/7/1997",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "dshirt3",
+      "email": "aeastbury3@ox.ac.uk",
+      "profileImgUri": "http://dummyimage.com/241x211.png/dddddd/000000",
+      "height": 6.1,
+      "weight": 181,
+      "DOB": "5/27/1987",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "hwarman4",
+      "email": "ekerby4@marriott.com",
+      "profileImgUri": "http://dummyimage.com/176x230.bmp/5fa2dd/ffffff",
+      "height": 6.2,
+      "weight": 213,
+      "DOB": "2/2/1998",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "jespinet5",
+      "email": "tmelledy5@ftc.gov",
+      "profileImgUri": "http://dummyimage.com/213x178.jpg/ff4444/ffffff",
+      "height": 5.6,
+      "weight": 162,
+      "DOB": "10/27/1995",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "kgabriely6",
+      "email": "delam6@loc.gov",
+      "profileImgUri": "http://dummyimage.com/190x120.png/ff4444/ffffff",
+      "height": 5.7,
+      "weight": 175,
+      "DOB": "1/28/1997",
+      "password": '123'
+    }),
+    User.create({
+      "userName": "lcaesmans7",
+      "email": "glounds7@census.gov",
+      "profileImgUri": "http://dummyimage.com/103x239.png/ff4444/ffffff",
+      "height": 5.7,
+      "weight": 169,
+      "DOB": "4/26/1996",
+      "password": '123'
+
+    }),
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
 
-  const foods = await Promise.all([
-    FoodLogs.create({
-      "name": "Apple",
-      "sugar": 120,
-      "calories": 10,
-      "totalFat": 120,
-      "sodium": 10,
-      "protein": 120,
-      "carbs": 10,
-      "userId": 1,
-      "servingUnit": "cup",
-      "quantity": 1
-    }),
-    FoodLogs.create({
-      "name": "Orange",
-      "sugar": 120,
-      "calories": 10,
-      "totalFat": 120,
-      "sodium": 10,
-      "protein": 120,
-      "carbs": 10,
-      "userId": 1,
-      "servingUnit": "cup",
-      "quantity": 2
-    }),
-    FoodLogs.create({
-      "name": "donut",
-      "sugar": 120,
-      "calories": 350,
-      "totalFat": 120,
-      "sodium": 10,
-      "protein": 120,
-      "carbs": 10,
-      "userId": 2,
-      "servingUnit": "cup",
-      "quantity": 1
-    }),
-    FoodLogs.create({
-      "name": "banana",
-      "sugar": 33,
-      "calories": 65,
-      "totalFat": 23,
-      "sodium": 24,
-      "protein": 9,
-      "carbs": 15,
-      "userId": 2,
-      "servingUnit": "cup",
-      "quantity": 3
-    }),
-    FoodLogs.create({
-      "name": "mango",
-      "sugar": 47,
-      "calories": 46,
-      "totalFat": 14,
-      "sodium": 1,
-      "protein": 51,
-      "carbs": 34,
-      "userId": 2,
-      "servingUnit": "cup",
-      "quantity": 1
-    }),
 
+  const Foodlogs = await Promise.all([
+    FoodLogSeed.forEach(foodLog => {
+        FoodLogs.create(foodLog)
+      })
   ])
+
   // // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // // and store the result that the promise resolves to in a variable! This is nice!
-  console.log(`seeded ${foods.length} foods`)
+  console.log(`seeded ${FoodLogs.length} FoodLogs`)
   console.log(`seeded successfully`)
 
   const images = await Promise.all([
