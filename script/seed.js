@@ -18,7 +18,7 @@ const {
   Image
 } = require('../server/db/models')
 
-const FoodLogSeed = require('./testFoodLog')
+const FoodLogSeed = require('./FoodLogs')
 // console.log(FoodLogSeed);
 
 async function seed() {
@@ -136,7 +136,7 @@ async function seed() {
 
   // // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // // and store the result that the promise resolves to in a variable! This is nice!
-  console.log(`seeded ${FoodLogs.length} FoodLogs`)
+  console.log(`seeded ${Foodlogs.length} FoodLogs`)
   console.log(`seeded successfully`)
 
   const images = await Promise.all([
