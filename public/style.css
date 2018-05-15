@@ -5,12 +5,8 @@ body {
 
 .navbar {
   background-color: #0099FF;
-  border-bottom: 3px solid #ffdb4d;
+  border-bottom: 10px solid #ffdb4d;
 }
-
-/* hr {
-  color: #ffdb4d;
-} */
 
 a {
   text-decoration: none;

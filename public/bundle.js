@@ -281,7 +281,7 @@ var Navbar = function Navbar(_ref) {
     className: "logo"
   }, _react.default.createElement("img", {
     src: "/NYLogo.png"
-  })), _react.default.createElement("hr", null));
+  })));
 };
 /**
  * CONTAINER
