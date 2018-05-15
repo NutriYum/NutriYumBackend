@@ -57,5 +57,25 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 })
+router.get('/:id/day', (req, res, next) => {
+  let userId = req.params.id
+  FoodLogs.oneDay(userId)
+  .then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+  .catch(next);
+})
+
+router.get('/:id/week', (req, res, next) => {
+  let userId = req.params.id
+  FoodLogs.oneWeek(userId)
+  .then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+  .catch(next);
+})
+
+router.get('/:id/month', (req, res, next) => {
+  let userId = req.params.id
+  FoodLogs.oneMonth(userId)
+  .then((dayOfFoodLogs) => res.status(200).json(dayOfFoodLogs))
+  .catch(next);
+})
 
 module.exports = router
