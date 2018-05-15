@@ -78,4 +78,15 @@ router.get('/:id/month', (req, res, next) => {
   .catch(next);
 })
 
+router.delete('/:foodItemId', (req, res, next) => {
+  let itemId = req.params.foodItemId
+  FoodLogs.destroy({
+    where: {
+      id: itemId
+    }
+  })
+  .then(result => res.status(200).json(result))
+  .catch(next)
+})
+
 module.exports = router
