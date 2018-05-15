@@ -1,7 +1,7 @@
 
 
 const FoodLogSeed = [{
-    "name": "egg",
+    "name": "eggs",
     "sugar": 31,
     "calories": 161,
     "totalFat": 24,
@@ -9,9 +9,9 @@ const FoodLogSeed = [{
     "protein": 12,
     "carbs": 39,
     "userId": 6,
-    "servingUnit": "lbs",
+    "servingUnit": "eggs",
     "quantity": 5,
-    "date": "5/9/2018"
+    "date": "2018-01-10 11:49:31.029-06"
   },
   {
     "name": "pudding",
@@ -547,7 +547,7 @@ const FoodLogSeed = [{
     "date": "5/6/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 18,
     "calories": 191,
     "totalFat": 4,
@@ -560,7 +560,7 @@ const FoodLogSeed = [{
     "date": "5/5/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 13,
     "calories": 231,
     "totalFat": 6,
@@ -651,7 +651,7 @@ const FoodLogSeed = [{
     "date": "4/28/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 7,
     "calories": 135,
     "totalFat": 25,
@@ -794,7 +794,7 @@ const FoodLogSeed = [{
     "date": "5/9/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 17,
     "calories": 289,
     "totalFat": 10,
@@ -1743,7 +1743,7 @@ const FoodLogSeed = [{
     "date": "5/4/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 18,
     "calories": 104,
     "totalFat": 22,
@@ -1795,7 +1795,7 @@ const FoodLogSeed = [{
     "date": "5/11/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 13,
     "calories": 296,
     "totalFat": 3,
@@ -1912,7 +1912,7 @@ const FoodLogSeed = [{
     "date": "4/27/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 30,
     "calories": 126,
     "totalFat": 19,
@@ -3160,7 +3160,7 @@ const FoodLogSeed = [{
     "date": "5/13/2018"
   },
   {
-    "name": "egg",
+    "name": "eggs",
     "sugar": 34,
     "calories": 78,
     "totalFat": 24,
@@ -3194,7 +3194,7 @@ const FoodLogSeed = [{
     "protein": 10,
     "carbs": 40,
     "userId": 3,
-    "servingUnit": "gallon",
+    "servingUnit": "medium",
     "quantity": 5,
     "date": "4/20/2018"
   },
@@ -3233,7 +3233,7 @@ const FoodLogSeed = [{
     "protein": 8,
     "carbs": 19,
     "userId": 5,
-    "servingUnit": "oz",
+    "servingUnit": "strips",
     "quantity": 3,
     "date": "5/13/2018"
   },
@@ -3259,7 +3259,7 @@ const FoodLogSeed = [{
     "protein": 2,
     "carbs": 23,
     "userId": 3,
-    "servingUnit": "",
+    "servingUnit": "handful",
     "quantity": 5,
     "date": "5/7/2018"
   },
@@ -3324,7 +3324,7 @@ const FoodLogSeed = [{
     "protein": 5,
     "carbs": 33,
     "userId": 6,
-    "servingUnit": "",
+    "servingUnit": "cup",
     "quantity": 1,
     "date": "5/8/2018"
   },
@@ -3376,7 +3376,7 @@ const FoodLogSeed = [{
     "protein": 15,
     "carbs": 44,
     "userId": 4,
-    "servingUnit": "",
+    "servingUnit": "cup",
     "quantity": 4,
     "date": "5/6/2018"
   },
@@ -3389,7 +3389,7 @@ const FoodLogSeed = [{
     "protein": 4,
     "carbs": 48,
     "userId": 1,
-    "servingUnit": "",
+    "servingUnit": "oz",
     "quantity": 4,
     "date": "4/30/2018"
   },
@@ -3480,7 +3480,7 @@ const FoodLogSeed = [{
     "protein": 14,
     "carbs": 39,
     "userId": 4,
-    "servingUnit": "oz",
+    "servingUnit": "medium",
     "quantity": 3,
     "date": "5/6/2018"
   },
@@ -3493,7 +3493,7 @@ const FoodLogSeed = [{
     "protein": 4,
     "carbs": 8,
     "userId": 10,
-    "servingUnit": "much",
+    "servingUnit": "slice",
     "quantity": 5,
     "date": "4/20/2018"
   },

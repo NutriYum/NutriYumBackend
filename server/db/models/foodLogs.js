@@ -35,7 +35,8 @@ const FoodLogs = db.define('foodLogs', {
         type: Sequelize.INTEGER
     },
     date: {
-      type: Sequelize.STRING
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.NOW
     }
 
 })
