@@ -55,7 +55,7 @@ router.get('/:id', async (req, res, next) => {
 })
 
 router.post('/', async (req, res, next) => {
-  console.log(req)
+
   try {
     const newFoodArray = await req.body.map(element => {
       return FoodLogs.create({
@@ -111,5 +111,16 @@ router.get('/:id/day', (req, res, next) => {
 
 
 
+
+router.delete('/:foodItemId', (req, res, next) => {
+  let itemId = req.params.foodItemId
+  FoodLogs.destroy({
+    where: {
+      id: itemId
+    }
+  })
+  .then(result => res.status(200).json(result))
+  .catch(next)
+})
 
 module.exports = router
