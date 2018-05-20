@@ -31,7 +31,7 @@ async function seed() {
 
   const users = await Promise.all([
     User.create({
-      "userName": "Bugs",
+      "userName": "Frank",
       "email": "a@a.com",
       "profileImgUri": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/1200px-Bugs_Bunny.svg.png",
       "height": 5,
