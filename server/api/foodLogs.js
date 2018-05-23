@@ -40,6 +40,15 @@ FoodLogs.oneMonthAll()
 .catch(next);
 })
 
+router.get('/monthlysum', (req, res, next) => {
+  FoodLogs.monthlySum()
+  .then((sum) => {
+    return res.status(200).json(sum)
+  })
+  .catch(next);
+  })
+
+
 router.get('/:id', async (req, res, next) => {
   try {
     const id = req.params.id

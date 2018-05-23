@@ -35,7 +35,7 @@ const FoodLogs = db.define('foodLogs', {
         type: Sequelize.INTEGER
     },
     date: {
-      type: Sequelize.DATE,
+      type: Sequelize.DATEONLY,
       defaultValue: Sequelize.NOW
     }
 })
@@ -115,6 +115,15 @@ FoodLogs.oneMonthAll = function (){
             date: {[Op.gte]: endDate}
          }
     })
+}
+
+FoodLogs.monthlySum = function() {
+  return db.query(`SELECT count(*), date, sum(calories) FROM "foodLogs" WHERE date > (current_timestamp - interval '10 days') GROUP BY date ORDER BY date;`)
+  .spread((results, metadata) => {
+    // console.log("results >>>>>>>>", results)
+    // console.log("metadata >>>>>", metadata)
+    return results
+  })
 }
 
 
